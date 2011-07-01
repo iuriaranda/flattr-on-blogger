@@ -7,16 +7,20 @@ if (empty($username)) {
 }
 $compact = $_POST["compact"];
 if(empty($compact)) {
-	$compact = ""; 
+	$compact = "false"; 
 } else {
-	$compact = 'button.rev="flattr;button:compact;";'; 
+	$compact = 'true'; 
+}
+$everywhere = $_POST["everywhere"];
+if(empty($everywhere)) {
+	$everywhere = "false"; 
+} else {
+	$everywhere = 'true'; 
 }
 $script =<<<EOT
 <script type='text/javascript' src='http://api.flattr.com/js/0.6/load.js?uid=$username'> </script>
 <div style="text-align:center;"><a id="main_flattr" class="FlattrButton" style="display:none;" href=""></a></div>
-<script>
-var main_button=document.getElementById("main_flattr");main_button.className="FlattrButton";main_button.href=window.location.hostname;if(document.querySelectorAll){var entries=document.querySelectorAll(".hentry");if(entries.length==1){var footer=entries[0].querySelectorAll(".post-footer");var url=window.location.href;var button=document.createElement("a");button.className="FlattrButton";button.style="display:none";button.href=url;$compact;var footer=entries[0].querySelectorAll(".post-footer")[0];footer.appendChild(button);}else{for(var i=0;i<entries.length;i++){var url=entries[i].querySelectorAll(".entry-title>a[href]")[0].href;var button=document.createElement("a");button.className="FlattrButton";button.style="display:none";button.href=url;$compact;var footer=entries[i].querySelectorAll(".post-footer")[0];footer.appendChild(button);}}}FlattrLoader.setup();
-</script>
+<script type='text/javascript' src='http://melpomene.github.com/Flattr-on-blogger/flattrbutton.js?compact=$compact&everywhere=$everywhere'></script>
 EOT;
 ?>
 </head>
