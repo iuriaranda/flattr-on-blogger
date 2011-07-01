@@ -1,5 +1,5 @@
 var scripts = document.getElementsByTagName("script");
-var tag = script[script.length-1];
+var tag = scripts[scripts.length-1];
 var src = instance.getAttribute('src');	
 var pos = src.indexOf('?');
 if (pos) {
