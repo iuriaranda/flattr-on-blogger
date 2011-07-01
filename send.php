@@ -26,15 +26,14 @@ EOT;
 </head>
 <body>
 
-	<form name="send" action="http://www.blogger.com/add-widget">
-		<form method="POST" action="http://www.blogger.com/add-widget">
-		<input type="hidden" name="widget.title" value="Flattr on Blogger"/>
+	<form method="POST" action="http://www.blogger.com/add-widget">
+		<input type="hidden" name="widget.title" value="Flattr this blog"/>
 		<input type="hidden" name="widget.content" value="
 		<?php echo htmlspecialchars( str_replace('"', "'", $script)); ?>
 		"/>
 		<input type="hidden" name="widget.template" value="&lt;data:content/&gt;" />
-		<!-- <input type="hidden" name="infoUrl" value="http://www.bloggingtips.com"/>
-		<input type="hidden" name="logoUrl" value="http://www.bloggingtips.com/wp-content/uploads/2008/11/bt-icon.gif"/> -->
+		<!--<input type="hidden" name="infoUrl" value="http://flattr.kejsarmakten.se/blogger" />
+		<input type="hidden" name="logoUrl" value="https://flattr.com/_img/icons/flattr_logo_16.png" /> -->
 	</form>
 	<script type="text/javascript" language="JavaScript">
 		document.send.submit();
