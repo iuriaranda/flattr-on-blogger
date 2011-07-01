@@ -1,6 +1,6 @@
 var scripts = document.getElementsByTagName("script");
 var tag = scripts[scripts.length-1];
-var src = instance.getAttribute('src');	
+var src = tag.getAttribute('src');	
 var pos = src.indexOf('?');
 if (pos) {
 	var qs = src.substring(++pos);
