@@ -26,14 +26,16 @@ EOT;
 </head>
 <body>
 
-	<form method="POST" action="http://www.blogger.com/add-widget">
+	<form name="send" action="http://www.blogger.com/add-widget">
 		<input type="hidden" name="widget.title" value="Flattr this blog"/>
 		<input type="hidden" name="widget.content" value="
 		<?php echo htmlspecialchars( str_replace('"', "'", $script)); ?>
 		"/>
 		<input type="hidden" name="widget.template" value="&lt;data:content/&gt;" />
-		<!--<input type="hidden" name="infoUrl" value="http://flattr.kejsarmakten.se/blogger" />
-		<input type="hidden" name="logoUrl" value="https://flattr.com/_img/icons/flattr_logo_16.png" /> -->
+		<!-- <input type="hidden" name="infoUrl" value="http://flattr.kejsarmakten.se/blogger" />
+		<input type="hidden" name="logoUrl" value="https://flattr.com/_img/icons/flattr_logo_16.png" /> 
+		if user is logged out the data is lost if it is sent as POST data. 
+		When sent as GET the URL is to long to process when user need to log in-->
 	</form>
 	<script type="text/javascript" language="JavaScript">
 		document.send.submit();
