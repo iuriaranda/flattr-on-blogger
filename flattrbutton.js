@@ -1,6 +1,6 @@
 var scripts = document.getElementsByTagName("script");
-var tag = script[script.length-1];
-var src = instance.getAttribute('src');	
+var tag = scripts[scripts.length-1];
+var src = tag.getAttribute('src');	
 var pos = src.indexOf('?');
 if (pos) {
 	var qs = src.substring(++pos);
@@ -49,11 +49,3 @@ if(document.querySelectorAll){
 	}
 }
 FlattrLoader.setup();
-
-
-
-
-
-
-
-
