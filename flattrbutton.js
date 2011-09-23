@@ -49,3 +49,17 @@ if(document.querySelectorAll){
 	}
 }
 FlattrLoader.setup();
+
+// Now change the flattr buttons class to align with the other share buttons
+if (document.querySelectorAll) {
+    var entries = document.querySelectorAll('.hentry');
+    if (entries.length == 1 ) { // Single post page. 
+        var button = entries[0].querySelectorAll(".FlattrButton")[0];
+        button.className += " goog-inline-block dummy-container";
+    } else if (everywhere == "true") {
+        for (var i = 0; i < entries.length; i ++) {
+            var button = entries[i].querySelectorAll(".FlattrButton")[0];
+            button.className += " goog-inline-block dummy-container";
+        }
+    }
+}
