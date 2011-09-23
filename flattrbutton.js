@@ -31,7 +31,7 @@ if(document.querySelectorAll){
 		if(compact == "true") {
 			button.rev="flattr;button:compact;";
 		}
-		var footer = entries[0].querySelectorAll(".post-footer")[0];
+		var footer = entries[0].querySelectorAll(".post-share-buttons")[0];
 		footer.appendChild(button);
 	}else if(everywhere=="true"){
 		for (var i = 0; i < entries.length; i ++) {
