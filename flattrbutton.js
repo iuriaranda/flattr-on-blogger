@@ -22,10 +22,10 @@ main_button.href = window.location.hostname;
 if(document.querySelectorAll){
 	var entries = document.querySelectorAll('.hentry');
 	if (entries.length == 1 ) { // Single post page. 
-		var footer = entries[0].querySelectorAll('.post-footer');
+		var footer = entries[0].querySelectorAll('.post-share-buttons');
 		var url = window.location.href;
 		var button =  document.createElement("a");
-		button.className = "FlattrButton";
+		button.className = "FlattrButton goog-inline-block dummy-container";
 		button.style = "display:none";
 		button.href= url;
 		if(compact == "true") {
@@ -37,13 +37,13 @@ if(document.querySelectorAll){
 		for (var i = 0; i < entries.length; i ++) {
 			var url = entries[i].querySelectorAll(".entry-title>a[href]")[0].href;
 			var button =  document.createElement("a");
-			button.className = "FlattrButton";
+			button.className = "FlattrButton goog-inline-block dummy-container";
 			button.style = "display:none";
 			button.href= url;
 			if(compact == "true") {
 				button.rev="flattr;button:compact;";
 			}
-			var footer = entries[i].querySelectorAll(".post-footer")[0];
+			var footer = entries[i].querySelectorAll(".post-share-buttons")[0];
 			footer.appendChild(button);
 		}
 	}
